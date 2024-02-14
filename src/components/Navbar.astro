@@ -1,5 +1,6 @@
 ---
 import RedSocial from "../components/RedSocial.astro";
+import curriculum from "/CV_Luis_de_la_Torre_Ing_software.pdf"
 
 const urlRedSocial = `${import.meta.env.PUBLIC_API_URL}/redes-sociales`;
 const urlPerfil = `${import.meta.env.PUBLIC_API_URL}/perfil?populate=imagen`;
@@ -26,7 +27,7 @@ const [{ data: redesSociales }, { data: perfil }] = await Promise.all([
                 />
             </div>
             <div
-                class="col-sm-12  col-lg-10 d-flex flex-column align-items-center justify-content-center"
+                class="col-sm-12 col-lg-10 d-flex flex-column align-items-center justify-content-center"
             >
                 <h5>Luis Angel De La Torre Sánchez</h5>
                 <a
@@ -78,6 +79,17 @@ const [{ data: redesSociales }, { data: perfil }] = await Promise.all([
                         data-scroll
                     >
                         Proyectos
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        class="nav-link"
+                        data-scroll
+                        href={curriculum}
+                        target="_blank"
+                    >
+                        Curriculum
                     </a>
                 </li>
             </ul>
