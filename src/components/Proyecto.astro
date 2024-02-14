@@ -1,0 +1,56 @@
+---
+import Icon from "../components/Icon.astro";
+
+export interface Props {
+    nombre: string;
+    descripcion: string;
+    page: string;
+    repositorio: string;
+    imagen: string;
+    tecnologias: any;
+}
+
+const { nombre, descripcion, page, repositorio, imagen, tecnologias } =
+    Astro.props;
+---
+
+<div class="col-12"></div>
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-5">
+            <a href={page} target="_blank"
+                ><img
+                    src={imagen}
+                    class="img-fluid rounded-start"
+                    alt="..."
+                /></a
+            >
+        </div>
+        <div class="col-md-7">
+            <div class="card-body">
+                <h3 class="card-title d-inline">{nombre}</h3><a
+                    href={repositorio}
+                    target="_blank"
+                    class="btn btn-primary badge badge-primary bi bi-github mx-3" style="font-size: 1rem;"
+                >
+                    Repositorio</a
+                >
+                <p class="card-text mt-3 mb-5 lead">{descripcion}</p>
+                <div
+                    class="container custom-container rounded p-2"
+                    style="background-color: #d0d2d4;"
+                >
+                    <div class="row g-5">
+                        {
+                            tecnologias?.map((tecnologia) => (
+                                <div class="col-1 mx-3">
+                                    <Icon icon={tecnologia} />
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

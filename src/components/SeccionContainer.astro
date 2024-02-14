@@ -1,0 +1,16 @@
+---
+export interface Props {
+    id: string
+}
+
+const { id } = Astro.props;
+---
+
+
+<div id={id} class="contenedor"></div>
+
+<style>
+    .contenedor{
+        padding: 50px;
+    }
+</style>

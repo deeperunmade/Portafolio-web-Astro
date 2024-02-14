@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Experiencia from "../components/Experiencias.astro";
+import Proyectos from "../components/Proyectos.astro";
+import SobreMi from "../components/SobreMi.astro";
+import SeccionContainer from "../components/SeccionContainer.astro";
+
+const urlPerfil = `${import.meta.env.PUBLIC_API_URL}/perfil?populate=imagen`;
+const urlExperiencia = `${import.meta.env.PUBLIC_API_URL}/experiencias`;
+const [resExperiencia, resPerfil] = await Promise.all([
+  fetch(urlExperiencia),
+  fetch(urlPerfil),
+]);
+const [{ data: experiencia }, { data: perfil }] = await Promise.all([
+  resExperiencia.json(),
+  resPerfil.json(),
+]);
+---
+
+<Layout title="Portafolio Luis de la Torre - Desarrollador web full stack Jr">
+  <section
+    style="height: 100vh;"
+    class="d-flex align-items-center justify-content-center container-fluid"
+  >
+    <div class="row gy-3">
+      <div class="col-md-12 text-center">
+        <h4>Bienvenidos, mi nombre es</h4>
+        <h1>Luis Angel de la Torre</h1>
+        <h3>Desarrollador web Full Stack Jr</h3>
+        <p>Recién egresado de la ingeniería de software y redes en UNITEC.</p>
+      </div>
+    </div>
+  </section>
+  <SeccionContainer id="index" />
+  <section>
+    <SobreMi perfil={perfil} />
+  </section>
+  <SeccionContainer id="experiencia" />
+  <section>
+    <Experiencia experiencia={experiencia} />
+  </section>
+  <SeccionContainer id="proyectos" />
+  <section>
+    <Proyectos />
+  </section>
+  <!-- <section id="contacto">
+    <Constacto />
+  </section>
+  <SeccionContainer /> -->
+</Layout>
+
+<style>
+  section {
+    .card,
+    .timeline-list li {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 20%;
+    }
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: 0 100px;
+      scale: 0.5;
+    }
+
+    to {
+      opacity: 1;
+      translate: 0 0;
+      scale: 1;
+    }
+  }
+</style>

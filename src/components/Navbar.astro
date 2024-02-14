@@ -1,0 +1,109 @@
+---
+import RedSocial from '../components/RedSocial.astro'
+
+
+const urlRedSocial = `${import.meta.env.PUBLIC_API_URL}/redes-sociales`;
+const urlPerfil = `${import.meta.env.PUBLIC_API_URL}/perfil?populate=imagen`;
+
+const [resRedSocial, resPerfil] = await Promise.all([fetch(urlRedSocial),fetch(urlPerfil)]);
+const [{data: redesSociales}, {data: perfil}] = await Promise.all([
+    resRedSocial.json(),
+    resPerfil.json()
+])
+
+---
+
+<nav class="navbar fixed-top navbar-expand-md navbar-dark navBackground">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src={perfil.attributes.imagen.data.attributes.formats.thumbnail.url} alt="foto de perfil" style="border-radius: 50%; width:80px; margin-right: 1.5rem;">  
+            </div>
+            <div class="col-10 d-flex flex-column align-items-center justify-content-center">
+                <h5>Luis Angel De La Torre Sánchez</h5>
+                <a href={redesSociales[1].attributes.link} class="btn btn-primary badge badge-primary">Disponible para trabajar</a>
+            </div>
+        </div>
+
+        <button
+            class="navbar-toggler nav-mobile"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a
+                        href="#index"
+                        data-mdb-toggle="collapse"
+                        class="nav-link"
+                        data-scroll
+                    >
+                        Sobre mi
+                    </a>
+                </li>
+               
+                <li class="nav-item">
+                    <a
+                        href="#experiencia"
+                        data-mdb-toggle="collapse"
+                        class="nav-link"
+                        data-scroll
+                    >
+                        Experiencia
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a
+                        href="#proyectos"
+                        data-mdb-toggle="collapse"
+                        class="nav-link"
+                        data-scroll
+                    >
+                        Proyectos
+                    </a>
+                </li>
+
+                <!-- <li class="nav-item">
+                    <a
+                        href="#contacto"
+                        data-mdb-toggle="collapse"
+                        class="nav-link"
+                        data-scroll
+                    >
+                        Contacto
+                    </a>
+                </li> -->
+
+            </ul>
+
+            <div class="dropdown">
+                <button
+                    class="btn btn-secondary dropdown-toggle btnSocial"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                >
+                    Redes Sociales
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    {
+                        redesSociales?.map((redSocial) => (
+                            <RedSocial
+                                nombre={redSocial.attributes.nombre}
+                                link={redSocial.attributes.link}
+                                icono={redSocial.attributes.icono}
+                            />
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
