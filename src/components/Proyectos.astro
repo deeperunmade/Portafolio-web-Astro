@@ -12,7 +12,7 @@ const { data } = await respuesta.json();
 			<h4 class="mb-5">Proyectos</h4>
 		</div>
 		{
-			data?.map((proyecto) => (
+			data?.map(proyecto => (
 				<Proyecto
 					nombre={proyecto.attributes.nombre}
 					descripcion={proyecto.attributes.descripcion}

@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.2",
+    "@astrojs/netlify": "^5.1.2",
+    "@astrojs/node": "^8.2.0",
     "astro": "^4.3.5",
     "nodemailer": "^6.9.9",
     "typescript": "^5.3.3"
