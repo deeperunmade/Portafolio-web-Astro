@@ -38,8 +38,10 @@ const { title } = Astro.props;
 		<script src="https://kit.fontawesome.com/08bd4a5ff8.js"></script>
 	</head>
 	<body>
-		<Navbar />
-		<slot />
+		<div class="container-fluid">
+			<div class="row"><Navbar /></div>
+			<div class="row"><slot /></div>
+		</div>
 	</body>
 </html>
 
@@ -59,7 +61,7 @@ const { title } = Astro.props;
 			color: #fff;
 			text-decoration: none;
 		}
-	}	
+	}
 	.section-title {
 		text-align: center;
 	}
