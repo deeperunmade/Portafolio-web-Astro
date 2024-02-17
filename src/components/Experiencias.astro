@@ -1,6 +1,3 @@
----
-const { experiencia } = Astro.props;
----
 
 <div class="container">
     <div class="row">
@@ -16,23 +13,39 @@ const { experiencia } = Astro.props;
                 <div class="timeline-row">
                     <div class="timeline-column">
                         <div class="timeline-box">
-                            {
-                                experiencia?.map((exp) => (
-                                    <div class="timeline-content">
-                                        <div class="content">
-                                            <div class="year">
-                                                <i class="fa-solid fa-calendar-days" />
-                                                {exp.attributes.tiempo}
-                                            </div>
-                                            <h3>
-                                                {exp.attributes.puesto} - (
-                                                {exp.attributes.empresa})
-                                            </h3>
-                                            <p>{exp.attributes.actividades}</p>
-                                        </div>
-                                    </div>
-                                ))
-                            }
+                            <div class="timeline-content" data-astro-cid-3s6z3jzb>
+                                <div class="content" data-astro-cid-3s6z3jzb>
+                                    <div class="year" data-astro-cid-3s6z3jzb> <i
+                                            class="fa-solid fa-calendar-days"
+                                            data-astro-cid-3s6z3jzb></i> 10/2022 - 01/2023 </div>
+                                    <h3 data-astro-cid-3s6z3jzb> Practicante de sistemas - (
+                                        Sumida)
+                                    </h3>
+                                    <p data-astro-cid-3s6z3jzb>En Sumida, desarrollé aplicaciones web
+                                        para distintas áreas, brindé soporte técnico presencial y remoto
+                                        a usuarios, gestioné licencias y cuentas, y me ocupé de la
+                                        configuración y administración de correos electrónicos,
+                                        servidores y páginas web. Además, contribuí en la configuración
+                                        de equipos nuevos y realicé mantenimiento preventivo en equipos
+                                        de cómputo.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-content" data-astro-cid-3s6z3jzb>
+                                <div class="content" data-astro-cid-3s6z3jzb>
+                                    <div class="year" data-astro-cid-3s6z3jzb> <i
+                                            class="fa-solid fa-calendar-days"
+                                            data-astro-cid-3s6z3jzb></i> 06/2023 - 12/2023 </div>
+                                    <h3 data-astro-cid-3s6z3jzb> Practicante de sistemas - (
+                                        Virbac)
+                                    </h3>
+                                    <p data-astro-cid-3s6z3jzb>Como becario de sistemas, brindé soporte
+                                        técnico presencial y remoto. Además, me enfoqué en pruebas y
+                                        depuración, documentación técnica, capacitación de usuarios,
+                                        monitoreo y mantenimiento rutinario. Participé en proyectos
+                                        clave y mantuve una actitud proactiva al investigar nuevas
+                                        tecnologías.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

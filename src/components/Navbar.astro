@@ -1,18 +1,5 @@
 ---
-import RedSocial from "../components/RedSocial.astro";
-import curriculum from "/CV_Luis_de_la_Torre_Ing_software.pdf"
-
-const urlRedSocial = `${import.meta.env.PUBLIC_API_URL}/redes-sociales`;
-const urlPerfil = `${import.meta.env.PUBLIC_API_URL}/perfil?populate=imagen`;
-
-const [resRedSocial, resPerfil] = await Promise.all([
-    fetch(urlRedSocial),
-    fetch(urlPerfil),
-]);
-const [{ data: redesSociales }, { data: perfil }] = await Promise.all([
-    resRedSocial.json(),
-    resPerfil.json(),
-]);
+import curriculum from "/CV_Luis_de_la_Torre_Ing_software.pdf";
 ---
 
 <nav class="navbar fixed-top navbar-expand-md navbar-dark navBackground">
@@ -20,8 +7,7 @@ const [{ data: redesSociales }, { data: perfil }] = await Promise.all([
         <div class="row">
             <div class="col-2 foto">
                 <img
-                    src={perfil.attributes.imagen.data.attributes.formats
-                        .thumbnail.url}
+                    src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707631563/thumbnail_perfil_a4b89be685.png"
                     alt="foto de perfil"
                     style="border-radius: 50%; width:80px; margin-right: 1.5rem;"
                 />
@@ -31,7 +17,7 @@ const [{ data: redesSociales }, { data: perfil }] = await Promise.all([
             >
                 <h5>Luis Angel De La Torre Sánchez</h5>
                 <a
-                    href={redesSociales[1].attributes.link}
+                    href="https://www.linkedin.com/in/Angel-de-la-Torre"
                     class="btn btn-primary badge badge-primary"
                     >Disponible para trabajar</a
                 >
@@ -104,15 +90,42 @@ const [{ data: redesSociales }, { data: perfil }] = await Promise.all([
                 </button>
 
                 <ul class="dropdown-menu dropdown-menu-dark">
-                    {
-                        redesSociales?.map((redSocial) => (
-                            <RedSocial
-                                nombre={redSocial.attributes.nombre}
-                                link={redSocial.attributes.link}
-                                icono={redSocial.attributes.icono}
-                            />
-                        ))
-                    }
+                    <li class="redSocial">
+                        <a
+                            class="dropdown-item bi bi-whatsapp"
+                            target="_blank"
+                            href="https://wa.me/3335055722/?text=Interesad@%20en%20tus%20servicios"
+                        >
+                            Whatsapp
+                        </a>
+                    </li>
+                    <li class="redSocial">
+                        <a
+                            class="dropdown-item bi bi-linkedin"
+                            target="_blank"
+                            href="https://www.linkedin.com/in/Angel-de-la-Torre"
+                        >
+                            Linkedin
+                        </a>
+                    </li>
+                    <li class="redSocial">
+                        <a
+                            class="dropdown-item bi bi-github"
+                            target="_blank"
+                            href="https://github.com/deeperunmade"
+                        >
+                            Github
+                        </a>
+                    </li>
+                    <li class="redSocial">
+                        <a
+                            class="dropdown-item bi bi-envelope-at-fill"
+                            target="_blank"
+                            href="mailTo:darkknightandroid@gmail.com?Subject=Interesad@%20en%20tus%20servicios"
+                        >
+                            Gmail
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

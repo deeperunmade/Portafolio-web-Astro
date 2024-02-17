@@ -1,18 +1,29 @@
 ---
 import Habilidades from "../components/Habilidades.astro";
-const { perfil } = Astro.props;
 ---
 
 <div class="container">
     <div class="row justify-content-center align-items-center g-5">
         <div class="section-title">
-			<h4 class="mb-5">Sobre mi</h4>
-		</div>
+            <h4 class="mb-5">Sobre mi</h4>
+        </div>
         <div class="col-sm-12 col-lg-3 text-center">
-            <img class="img-thumbnail" src={perfil.attributes.imagen.data.attributes.url} alt="" />
+            <img
+                class="img-thumbnail"
+                src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707631563/thumbnail_perfil_a4b89be685.png"
+                alt=""
+            />
         </div>
         <div class="col-sm-12 col-lg-6">
-            <p style="font-size: 1.2rem;" class="text-center">{perfil.attributes.descripcion}</p>
+            <p style="font-size: 1.2rem;" class="text-center">
+                Soy un recién egresado de la ingeniería en software y redes en
+                la universidad tecnológica de México. Me gustan los desafíos y
+                estar en constante aprendizaje, buscando siempre estar
+                actualizado y alcanzar todos mis objetivos. Tengo una gran
+                adaptabilidad y creatividad al momento de enfrentarme a las
+                adversidades por lo que en mis experiencias laborales siempre
+                busco innovar y sobresalir en todo lo que hago.
+            </p>
         </div>
     </div>
     <div class="row mt-5">

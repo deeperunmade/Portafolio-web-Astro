@@ -1,30 +1,157 @@
 ---
-import Proyecto from "../components/Proyecto.astro";
-
-const url = `${import.meta.env.PUBLIC_API_URL}/proyectos?populate=imagen`;
-const respuesta = await fetch(url);
-const { data } = await respuesta.json();
+import Vite from "../components/icons/Vite.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
+import React from "../components/icons/React.astro";
+import Boostrap from "../components/icons/Boostrap.astro";
+import AstroIcon from "../components/icons/AstroIcon.astro";
 ---
-
 <div class="container">
 	<div class="row g-3 mb-5">
 		<div class="section-title">
 			<h4 class="mb-5">Proyectos</h4>
 		</div>
-		{
-			data?.map(proyecto => (
-				<Proyecto
-					nombre={proyecto.attributes.nombre}
-					descripcion={proyecto.attributes.descripcion}
-					page={proyecto.attributes.page}
-					repositorio={proyecto.attributes.repositorio}
-					imagen={
-						proyecto.attributes.imagen.data.attributes.formats
-							.medium.url
-					}
-					tecnologias={proyecto.attributes.tecnologias}
-				/>
-			))
-		}
+		<div class="card mb-3">
+			<div class="row g-0">
+				<div class="col-md-5">
+					<a
+						href="https://deeperunmade.github.io/citas_veterinaria"
+						target="_blank"
+						><img
+							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707630008/medium_veterinario_aa5b8e4344.png"
+							class="img-fluid rounded-start"
+							alt="..."
+						/></a
+					>
+				</div>
+				<div class="col-md-7">
+					<div class="card-body">
+						<h3 class="card-title d-inline">Citas Veterinario</h3><a
+							href="https://github.com/deeperunmade/citas_veterinaria"
+							target="_blank"
+							class="btn btn-primary badge badge-primary bi bi-github mx-3"
+							style="font-size: 1rem;"
+						>
+							Repositorio</a
+						>
+						<p class="card-text mt-3 mb-5 lead">
+							Un proyecto para poner aprueba mis nuevas
+							habilidades con nuevas tecnologías como lo es la
+							librería de React, Vite y Tailwindcss.
+						</p>
+						<div
+							class="container custom-container rounded p-2"
+							style="background-color: #d0d2d4;"
+						>
+							<div class="row g-5">
+								<div class="col-1 mx-3">
+									<Tailwind />
+								</div>
+								<div class="col-1 mx-3">
+									<Vite />
+								</div>
+								<div class="col-1 mx-3">
+									<React />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3">
+			<div class="row g-0">
+				<div class="col-md-5">
+					<a
+						href="https://deeperunmade.github.io/control_gastos"
+						target="_blank"
+						><img
+							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707630085/medium_control_gastos_42e5618423.png"
+							class="img-fluid rounded-start"
+							alt="..."
+						/></a
+					>
+				</div>
+				<div class="col-md-7">
+					<div class="card-body">
+						<h3 class="card-title d-inline">Control de Gastos</h3><a
+							href="https://github.com/deeperunmade/control_gastos"
+							target="_blank"
+							class="btn btn-primary badge badge-primary bi bi-github mx-3"
+							style="font-size: 1rem;"
+						>
+							Repositorio</a
+						>
+						<p class="card-text mt-3 mb-5 lead">
+							Proyecto No. 2 para poner aprueba mis habilidades
+							con React, Vite y Tailwind
+						</p>
+						<div
+							class="container custom-container rounded p-2"
+							style="background-color: #d0d2d4;"
+						>
+							<div class="row g-5">
+								<div class="col-1 mx-3">
+									<Tailwind />
+								</div>
+								<div class="col-1 mx-3">
+									<Vite />
+								</div>
+								<div class="col-1 mx-3">
+									<React />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card mb-3">
+			<div class="row g-0">
+				<div class="col-md-5">
+					<a
+						href="https://portafolio-ladlts.vercel.app/"
+						target="_blank"
+						><img
+							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707942552/medium_portafolio_0dd8c2bb65.png"
+							class="img-fluid rounded-start"
+							alt="..."
+						/></a
+					>
+				</div>
+				<div class="col-md-7">
+					<div class="card-body">
+						<h3 class="card-title d-inline">Portafolio Web</h3><a
+							href="https://github.com/deeperunmade/Portafolio-web-Astro"
+							target="_blank"
+							class="btn btn-primary badge badge-primary bi bi-github mx-3"
+							style="font-size: 1rem;"
+						>
+							Repositorio</a
+						>
+						<p class="card-text mt-3 mb-5 lead">
+							Empleando Astro, un excelente framework para crear
+							páginas estáticas con su arquitectura de
+							&quot;islas&quot;, que permite mejorar la eficiencia
+							en la carga de páginas estáticas al tiempo que
+							ofrece la flexibilidad de incorporar interactividad
+							solo donde es necesario.
+						</p>
+						<div
+							class="container custom-container rounded p-2"
+							style="background-color: #d0d2d4;"
+						>
+							<div class="row g-5">
+								<div class="col-1 mx-3">
+									<Boostrap />
+								</div>
+								<div class="col-1 mx-3">
+									<AstroIcon />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

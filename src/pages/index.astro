@@ -5,16 +5,6 @@ import Proyectos from "../components/Proyectos.astro";
 import SobreMi from "../components/SobreMi.astro";
 import SeccionContainer from "../components/SeccionContainer.astro";
 
-const urlPerfil = `${import.meta.env.PUBLIC_API_URL}/perfil?populate=imagen`;
-const urlExperiencia = `${import.meta.env.PUBLIC_API_URL}/experiencias`;
-const [resExperiencia, resPerfil] = await Promise.all([
-  fetch(urlExperiencia),
-  fetch(urlPerfil),
-]);
-const [{ data: experiencia }, { data: perfil }] = await Promise.all([
-  resExperiencia.json(),
-  resPerfil.json(),
-]);
 ---
 
 <Layout title="Portafolio Luis de la Torre - Desarrollador web full stack Jr">
@@ -33,11 +23,11 @@ const [{ data: experiencia }, { data: perfil }] = await Promise.all([
   </section>
   <SeccionContainer id="index" />
   <section>
-    <SobreMi perfil={perfil} />
+    <SobreMi />
   </section>
   <SeccionContainer id="experiencia" />
   <section>
-    <Experiencia experiencia={experiencia} />
+    <Experiencia />
   </section>
   <SeccionContainer id="proyectos" />
   <section>
