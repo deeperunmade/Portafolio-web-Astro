@@ -1,10 +1,13 @@
 ---
-import Vite from "../components/icons/Vite.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
 import React from "../components/icons/React.astro";
 import Boostrap from "../components/icons/Boostrap.astro";
 import AstroIcon from "../components/icons/AstroIcon.astro";
+import Next from "./icons/Next.astro";
+import Redux from "./icons/Redux.astro";
+import TypeScript from "./icons/TypeScript.astro";
 ---
+
 <div class="container">
 	<div class="row g-3 mb-5">
 		<div class="section-title">
@@ -12,122 +15,31 @@ import AstroIcon from "../components/icons/AstroIcon.astro";
 		</div>
 		<div class="card mb-3">
 			<div class="row g-0">
-				<div class="col-md-5">
-					<a
-						href="https://deeperunmade.github.io/citas_veterinaria"
-						target="_blank"
-						><img
-							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707630008/medium_veterinario_aa5b8e4344.png"
-							class="img-fluid rounded-start"
-							alt="..."
-						/></a
-					>
-				</div>
-				<div class="col-md-7">
-					<div class="card-body">
-						<h3 class="card-title d-inline">Citas Veterinario</h3><a
-							href="https://github.com/deeperunmade/citas_veterinaria"
-							target="_blank"
-							class="btn btn-primary badge badge-primary bi bi-github mx-3"
-							style="font-size: 1rem;"
-						>
-							Repositorio</a
-						>
-						<p class="card-text mt-3 mb-5 lead">
-							Un proyecto para poner aprueba mis nuevas
-							habilidades con nuevas tecnologías como lo es la
-							librería de React, Vite y Tailwindcss.
-						</p>
-						<div
-							class="container custom-container rounded p-2"
-							style="background-color: #d0d2d4;"
-						>
-							<div class="row g-5">
-								<div class="col-1 mx-3">
-									<Tailwind />
-								</div>
-								<div class="col-1 mx-3">
-									<Vite />
-								</div>
-								<div class="col-1 mx-3">
-									<React />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card mb-3">
-			<div class="row g-0">
-				<div class="col-md-5">
-					<a
-						href="https://deeperunmade.github.io/control_gastos"
-						target="_blank"
-						><img
-							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707630085/medium_control_gastos_42e5618423.png"
-							class="img-fluid rounded-start"
-							alt="..."
-						/></a
-					>
-				</div>
-				<div class="col-md-7">
-					<div class="card-body">
-						<h3 class="card-title d-inline">Control de Gastos</h3><a
-							href="https://github.com/deeperunmade/control_gastos"
-							target="_blank"
-							class="btn btn-primary badge badge-primary bi bi-github mx-3"
-							style="font-size: 1rem;"
-						>
-							Repositorio</a
-						>
-						<p class="card-text mt-3 mb-5 lead">
-							Proyecto No. 2 para poner aprueba mis habilidades
-							con React, Vite y Tailwind
-						</p>
-						<div
-							class="container custom-container rounded p-2"
-							style="background-color: #d0d2d4;"
-						>
-							<div class="row g-5">
-								<div class="col-1 mx-3">
-									<Tailwind />
-								</div>
-								<div class="col-1 mx-3">
-									<Vite />
-								</div>
-								<div class="col-1 mx-3">
-									<React />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card mb-3">
-			<div class="row g-0">
-				<div class="col-md-5">
+				<div
+					class="col-md-5 d-flex justify-content-center align-items-center"
+				>
 					<a
 						href="https://portafolio-ladlts.vercel.app/"
 						target="_blank"
-						><img
+					>
+						<img
 							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1707942552/medium_portafolio_0dd8c2bb65.png"
 							class="img-fluid rounded-start"
 							alt="..."
-						/></a
-					>
+						/>
+					</a>
 				</div>
 				<div class="col-md-7">
 					<div class="card-body">
-						<h3 class="card-title d-inline">Portafolio Web</h3><a
+						<h3 class="card-title d-inline">Portafolio Web</h3>
+						<a
 							href="https://github.com/deeperunmade/Portafolio-web-Astro"
 							target="_blank"
 							class="btn btn-primary badge badge-primary bi bi-github mx-3"
 							style="font-size: 1rem;"
 						>
-							Repositorio</a
-						>
+							Repositorio
+						</a>
 						<p class="card-text mt-3 mb-5 lead">
 							Empleando Astro, un excelente framework para crear
 							páginas estáticas con su arquitectura de
@@ -146,6 +58,75 @@ import AstroIcon from "../components/icons/AstroIcon.astro";
 								</div>
 								<div class="col-1 mx-3">
 									<AstroIcon />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card mb-3">
+			<div class="row g-0">
+				<div
+					class="col-md-5 d-flex justify-content-center align-items-center"
+				>
+					<a
+						href="https://portafolio-ladlts.vercel.app/"
+						target="_blank"
+					>
+						<img
+							src="https://res.cloudinary.com/dnfqiv8q8/image/upload/v1728166056/wpat09erj2z40lydj3ue.jpg"
+							class="img-fluid rounded-start"
+							alt="..."
+						/>
+					</a>
+				</div>
+				<div class="col-md-7">
+					<div class="card-body">
+						<h3 class="card-title d-inline">Gestion Home</h3>
+						<a
+							href="https://github.com/deeperunmade/Recetario"
+							target="_blank"
+							class="btn btn-primary badge badge-primary bi bi-github mx-3"
+							style="font-size: 1rem;"
+						>
+							Repositorio
+						</a>
+						<p class="card-text mt-3 mb-5 lead">
+							Gestión Home es una aplicación web personal
+							diseñada para optimizar la gestión del hogar,
+							enfocándose específicamente en las compras
+							semanales. La aplicación permite a los usuarios
+							seleccionar sus recetas favoritas y,
+							automáticamente, generar una lista de compras basada
+							en los ingredientes necesarios. Aunque el proyecto
+							está en desarrollo, refleja de manera integral mis
+							habilidades en desarrollo web, destacando mi
+							conocimiento en la creación de interfaces
+							intuitivas, la gestión de datos y la implementación
+							de funcionalidades dinámicas orientadas a mejorar la
+							experiencia del usuario.
+						</p>
+						<div
+							class="container custom-container rounded p-2"
+							style="background-color: #d0d2d4;"
+						>
+							<div class="row g-5">
+								<div class="col-1 mx-3">
+									<Tailwind />
+								</div>
+								<div class="col-1 mx-3">
+									<React />
+								</div>
+								<div class="col-1 mx-3">
+									<Next />
+								</div>
+								<div class="col-1 mx-3">
+									<Redux />
+								</div>
+								<div class="col-1 mx-3">
+									<TypeScript />
 								</div>
 							</div>
 						</div>
